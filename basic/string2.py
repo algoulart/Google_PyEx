@@ -17,8 +17,13 @@
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
 def verbing(s):
-    # +++your code here+++
-    return
+    if len(s)>=3:
+        if s[-3:] == 'ing':
+            s = s + 'ly'
+        else:
+            s = s + 'ing'
+        return(s)
+    return(s)
 
 
 # E. not_bad
@@ -42,8 +47,19 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-    # +++your code here+++
-    return
+    if len(a) % 2 == 0:
+        a_front = a[0:(len(a) // 2)]
+    else:
+        a_front = a[0:(len(a) // 2) + 1]
+    if len(b) % 2 == 0:
+        b_front = b[0:(len(b) // 2)]
+    else:
+        b_front = b[0:(len(b) // 2) + 1]
+
+    a_back = a[-(len(a_front)):]
+    b_back = b[-(len(b_front)):]
+    res = a_front+b_front+a_back+b_back
+    return res
 
 
 # Simple provided test() function used in main() to print
