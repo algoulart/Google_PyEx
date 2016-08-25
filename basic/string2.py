@@ -56,8 +56,8 @@ def front_back(a, b):
     else:
         b_front = b[0:(len(b) // 2) + 1]
 
-    a_back = a[-(len(a_front)):]
-    b_back = b[-(len(b_front)):]
+    a_back = a[-(len(a)-len(a_front)):]
+    b_back = b[-(len(b_front)-len(b_front)):]
     res = a_front+b_front+a_back+b_back
     return res
 
